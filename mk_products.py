@@ -16,7 +16,7 @@ def create_my_product(name, price, quantity):
     )
   db.session.commit()
 
-if __name__=="__main__":
+if __name__ == "__main__":
   create_my_product("BitCoin", 10.00, 10)
   products = Product.query.all()
   print(products)
