@@ -2,8 +2,10 @@
 #-*- coding: utf8 -*-
 """Route definitions"""
 
+from flask import render_template
 from app import app
-from datatime import datatime
+import sys
+from datetime import date, datetime
 
 @app.route("/version")
 def version():
@@ -29,13 +31,16 @@ def get_product_details(pid):
   return "Single product detail"
 
 @app.route("/products/<int:pid>", methods=["PUT"])
+def update_product(pid):
   """Update a single product"""
   return "Single product update"
 
 app.route("/products", methods=["POST"])
+def create_products(pid):
   """Create a new product"""
   return "Create new product"
 
 app.route("/products/<int:pid>", method=["DELETE"])
+def delete_product(pid):
   """soft deleteelete a single product"""
   return "Soft delete a product"

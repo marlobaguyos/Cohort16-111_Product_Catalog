@@ -1,0 +1,80 @@
+	1. https://docs.microsoft.com/en-us/windows/wsl/install-win10 - powershell
+
+	-------------Inside Ubuntu-----------------
+	2. sudo apt update && sudo apt upgrade
+	3. python3 -V
+	4. sudo apt install python3-pip
+	5. Create a Directory for your project 
+		a. mkdir -p ~/Code/SDGKU/Cohort16-111
+		b. pwd give you your path
+	6. sudo apt install python3-venv
+	7. Python3 -m venv venv
+	--------------Start venv---------------
+	8. source venv/bin/activate
+	9. pip3 install flask
+	10. pip3 freeze > requirements.txt
+	11. mkdir app
+	12. cd app
+	13. touch __init__.py
+	14. code .
+	15. Install Flask
+		a. pip3 install flask
+		b. Check if flask is install
+			i. Flask --help
+	16. Which python
+	17. export FLASK_APP=__init__.py
+	18. Flask run
+
+Install SQLITE
+sudo apt-get install sqlite3
+
+sqlite Quick Start
+(venv) mpbaguyos@ShuffleOffice:~/Code/SDGKU/Cohort16-111$ sqlite3 sample.db
+SQLite version 3.31.1 2020-01-27 19:55:54
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE user (
+   ...> id INTEGER PRIMARY KEY AUTOINCREMENT,
+   ...> first_name VARCHAR(45),
+   ...> last_name VARCHAR(45),
+   ...> hobbies TEXT);
+sqlite> INSERT INTO user(
+   ...> first_name,
+   ...> last_name,
+   ...> hobbies
+   ...> ) VALUES (
+   ...> "Marlo",
+   ...> "Baguyos",
+   ...> "Movie");
+sqlite> SELECT * FROM user WHERE id=1;
+1|Marlo|Baguyos|Movie
+sqlite> UPDATE user SET hobbies="Garage WorkOUT" WHERE id=1;  ---------updating data--------
+sqlite> SELECT * FROM user WHERE id=1;
+1|Marlo|Baguyos|Garage WorkOUT
+sqlite> INSERT INTO user (
+   ...> first_name,
+   ...> last_name) VALUES (
+   ...> "John",
+   ...> "Doe";
+Error: near ";": syntax error
+sqlite> INSERT INTO user (
+   ...> first_name,
+   ...> last_name) VALUES (
+   ...> "John",
+   ...> "Doe");
+sqlite> SELECT * FROM user;
+1|Marlo|Baguyos|Garage WorkOUT
+2|John|Doe|
+sqlite> DELETE FROM user WHERE id=2;
+sqlite> SELECT * FROM user;
+1|Marlo|Baguyos|Garage WorkOUT
+sqlite>  
+
+Create your environment
+1. make sure you have requirements.txt
+	pip3 freeze > requirements.txt
+2. deactivate 
+3. rm -rf venv
+4. Create a New environment
+		python3 -m venv venv
+5. activate - source venv/bin/activate
+6. pip3 install -r requirements.txt
