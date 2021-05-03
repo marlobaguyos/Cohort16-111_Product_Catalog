@@ -11,8 +11,7 @@ def create_my_product(name, price, quantity):
     Product(
       name=name,
       price=price,
-      quantity=quantity,
-
+      quantity=quantity
       )
     )
   db.session.commit()
