@@ -3,6 +3,7 @@
 """Route definitions"""
 
 from app import app
+from datatime import datatime
 
 @app.route("/version")
 def version():
@@ -29,11 +30,12 @@ def get_product_details(pid):
 
 @app.route("/products/<int:pid>", methods=["PUT"])
   """Update a single product"""
+  return "Single product update"
 
 app.route("/products", methods=["POST"])
   """Create a new product"""
-  pass
+  return "Create new product"
 
 app.route("/products/<int:pid>", method=["DELETE"])
   """soft deleteelete a single product"""
-  pass
+  return "Soft delete a product"
