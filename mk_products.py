@@ -20,5 +20,5 @@ if __name__ == "__main__":
   create_my_product("BitCoin", 10.00, 10)
   products = Product.query.all()
   print(products)
-  create_my_product("Dodgecoin", 1.00, 20)
+  create_my_product("Dodgecoin", 12.00, 20)
   
