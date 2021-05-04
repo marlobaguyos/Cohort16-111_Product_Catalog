@@ -20,28 +20,15 @@ def index():
     "ok" : True,
     "message" : "success",
     "version" : "1.0.0",
-    "server time" : datatime.now().strftime("%F %H:%H:%S")
+    "server time" : datetime.now().strftime("%F %H:%H:%S")
   }
   return render_template("index.html", version=version)
 
-# @app.route("/version")
-# def version():
-#   return{
-#     "ok" : True,
-#     "message": "success",
-#     "version": "1.0.0",
-#     "server time": datetime.now().strftime("%F %H:%H:%S")
-#   }
-
 @app.route("/products")
 def get_products():
-  """Retrieve all products"""
-  products = Product.query.all
-  return render_template("products.html", product_list=products)
-
-# @app.route("/")
-# def index():
-#   return render_template("index.html")
+    """Retrieve and display all products"""
+    products = Product.query.all()
+    return render_template("products.html", product_list=products)
 
 @app.route("/products", methods=["POST"])
 def create_product():
