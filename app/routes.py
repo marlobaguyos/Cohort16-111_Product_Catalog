@@ -6,7 +6,7 @@ from flask import (
       render_template,
       request, redirect,
       url_for,
-      flask)
+      flash)
 import sys
 from app import app, db
 from datetime import date, datetime
